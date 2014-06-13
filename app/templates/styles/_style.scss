@@ -13,6 +13,7 @@ This file is responsible for all styles on the <%= name %> app.  Styles should b
 */
 
 <% if (sassBoilerplate) { %>@import "../../bower_components/sass-boilerplate/sass/style.scss"; <% } %>
-main, header[role="banner"] {
+.slide {
+	// style slides here
 	<% if (sassBoilerplate) { %>@extend %normal-padding;<% } else { %>padding: 1rem;<% } %>
 }

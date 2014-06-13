@@ -1,6 +1,6 @@
 # generator-jmpress [![Build Status](https://secure.travis-ci.org/srsgores/generator-jmpress.png?branch=master)](https://travis-ci.org/srsgores/generator-jmpress)
 
-> [Yeoman](http://yeoman.io) generator for [jmpress]() slide decks in pure HTML/CSS.
+> [Yeoman](http://yeoman.io) generator for [jmpress](http://jmpressjs.github.io/jmpress.js/) slide decks in pure HTML/CSS.
 
 It will scaffold out new slide decks with header info in each file as follows:
 
@@ -32,8 +32,7 @@ It's very helpful for creating presentations.
 
 Generates:
 
-* Internationalized language strings in the ``language`` folder (no more editing the ``language.ini`` files!)
-* Codo javascript comments and header comments
+* [Codo](https://github.com/coffeedoc/codo) javascript comments and header comments
 * html header, footer, and ARIA roles
 
 ## Getting Started
