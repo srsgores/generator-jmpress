@@ -1,0 +1,18 @@
+/*
+@package: <%= name %> (app)
+
+@author: <%= authorName %>
+@www: <%= authorURL %>
+
+@copyright: COPYRIGHT <%= currentDate %> <%= license %>
+@license: <%= license %>
+
+Filename: style.scss
+
+This file is responsible for all styles on the <%= name %> app.  Styles should be compiled using compass and sass.
+*/
+
+<% if (sassBoilerplate) { %>@import "../../bower_components/sass-boilerplate/sass/style.scss"; <% } %>
+main, header[role="banner"] {
+	<% if (sassBoilerplate) { %>@extend %normal-padding;<% } else { %>padding: 1rem;<% } %>
+}

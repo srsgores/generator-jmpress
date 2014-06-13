@@ -11,6 +11,7 @@
 ###
 
 #global describe, beforeEach, it
+
 "use strict"
 path = require("path")
 helpers = require("yeoman-generator").test
@@ -30,8 +31,14 @@ describe "jmpress generator", ->
 			".editorconfig"
 		]
 		helpers.mockPrompt @app,
-			someOption: true
-
+			description: "A sample description"
+			name: "Test Name"
+			authorName: "Test Author Name"
+			authorEmail: "author@gmail.com"
+			authorURL: "http://me.com"
+			license: "DWTFYW (Do What the Fuck You Want License)"
+			includeModernizr: false
+			sassBoilerplate: true
 		@app.options["skip-install"] = true
 		@app.run {}, ->
 			helpers.assertFile expected

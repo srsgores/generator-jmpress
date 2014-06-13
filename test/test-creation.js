@@ -34,7 +34,14 @@
       var expected;
       expected = [".jshintrc", ".editorconfig"];
       helpers.mockPrompt(this.app, {
-        someOption: true
+        description: "A sample description",
+        name: "Test Name",
+        authorName: "Test Author Name",
+        authorEmail: "author@gmail.com",
+        authorURL: "http://me.com",
+        license: "DWTFYW (Do What the Fuck You Want License)",
+        includeModernizr: false,
+        sassBoilerplate: true
       });
       this.app.options["skip-install"] = true;
       return this.app.run({}, function() {

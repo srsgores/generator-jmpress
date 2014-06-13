@@ -1,45 +1,51 @@
 # generator-jmpress [![Build Status](https://secure.travis-ci.org/srsgores/generator-jmpress.png?branch=master)](https://travis-ci.org/srsgores/generator-jmpress)
 
-> [Yeoman](http://yeoman.io) generator
+> [Yeoman](http://yeoman.io) generator for [jmpress]() slide decks in pure HTML/CSS.
 
+It will scaffold out new slide decks with header info in each file as follows:
+
+```
+/*
+@package: Test Name (app)
+
+@author: Test Author Name
+@www: http://me.com
+
+@copyright: COPYRIGHT Fri Jun 13 2014 17:33:27 GMT-0600 (Mountain Daylight Time) DWTFYW (Do What the Fuck You Want License)
+@license: DWTFYW (Do What the Fuck You Want License)
+
+Filename: style.scss
+
+This file is responsible for all styles on the Test Name app.  Styles should be compiled using compass and sass.
+*/
+```
+
+It's very helpful for creating presentations.
+
+## Features
+
+
+* Jade-ready.  I assume you will compile with an IDE like PHPStorm, or a tool like prepros or CodeKit
+* **Based off the HTML5 boilerplate**.  You can actually expect root-level files like ``browserconfig.xml`` or ``apple-touch-icon-precomposed.png``
+* Ready to go with my [sass boilerplate](https://github.com/srsgores/sass-boilerplate).
+* **Bootstrap-free**!  But you can still use bootstrap if you really want to.
+
+Generates:
+
+* Internationalized language strings in the ``language`` folder (no more editing the ``language.ini`` files!)
+* Codo javascript comments and header comments
+* html header, footer, and ARIA roles
 
 ## Getting Started
+## Quick Start
 
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```bash
-$ npm install -g yo
-```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-jmpress from npm, run:
-
-```bash
-$ npm install -g generator-jmpress
-```
-
-Finally, initiate the generator:
-
-```bash
-$ yo jmpress
-```
-
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+1. Install [nodejs](http://nodejs.org)
+2. (Windows) Restart
+3. Install [yeoman](http://yeoman.io):
+```npm install -g yo```
+4. Install *generator-joomla-admin-template* **globally** from npm:
+```npm install -g generator-jmpress```
+5. Run the generator: ```bash $ yo jmpress```
 
 
 ## License

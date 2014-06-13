@@ -1,0 +1,20 @@
+//
+	<%= name %>
+
+	@author: <%= authorName %>
+	@www: <%= authorURL %>
+	@copyright: COPYRIGHT <%= currentDate %> <%= license %>
+	@license: <%= license %>
+
+	Filename: index.jade
+
+	This file is the entry point for the <%= name %> slides
+
+- title = <%= name %>
+- description = <%= description %>
+
+extends layout
+block content
+	header
+		h1 Welcome
+	p It's the express boilerplate

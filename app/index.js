@@ -41,26 +41,82 @@
       this.log(yosay("Welcome to the marvelous Jmpress generator!"));
       prompts = [
         {
+          name: "description",
+          message: "Describe your presentation",
+          "default": "A sample description"
+        }, {
+          name: "name",
+          message: "What's the name of your presentation?",
+          "default": "default-value"
+        }, {
+          name: "authorName",
+          message: "What's your name?",
+          "default": "Author name"
+        }, {
+          name: "authorEmail",
+          message: "What's your e-mail?",
+          "default": "email@somedomain.com"
+        }, {
+          name: "authorURL",
+          message: "What's your website?",
+          "default": "somedomain.com"
+        }, {
+          name: "license",
+          message: "What's the copyright license?",
+          "default": "MIT"
+        }, {
           type: "confirm",
-          name: "someOption",
-          message: "Would you like to enable this option?",
-          "default": true
+          name: "includeModernizr",
+          message: "Use modernizr?"
+        }, {
+          type: "confirm",
+          name: "sassBoilerplate",
+          message: "Use my sass boilerplate to quickly create base styles?"
         }
       ];
       return this.prompt(prompts, (function(props) {
-        this.someOption = props.someOption;
+        this.description = props.description;
+        this.name = props.name;
+        this.authorName = props.authorName;
+        this.authorEmail = props.authorEmail;
+        this.authorURL = props.authorURL;
+        this.license = props.license;
+        this.sassBoilerplate = props.sassBoilerplate;
+        this.includeModernizr = props.includeModernizr;
+        this.currentDate = (new Date()).toString();
         return done();
       }).bind(this));
+    },
+    createBrowserFiles: function() {
+      var file, files, _i, _len, _results;
+      files = ["tile.png", "tile-wide.png", "crossdomain.xml", "browserconfig.xml", "favicon.ico", ".htaccess", "robots.txt", "apple-touch-icon-precomposed.png"];
+      _results = [];
+      for (_i = 0, _len = files.length; _i < _len; _i++) {
+        file = files[_i];
+        _results.push(this.copy(file, file));
+      }
+      return _results;
+    },
+    createStyles: function() {
+      this.template("styles/_style.scss", "styles/style.scss");
+      if (this.sassBoilerplate) {
+        return this.copy("config.rb", "config.rb");
+      }
+    },
+    createLayoutFiles: function() {
+      this.template("_index.jade", "index.jade");
+      return this.template("_layout.jade", "layout.jade");
     },
     app: function() {
       this.mkdir("app");
       this.mkdir("app/templates");
-      this.copy("_package.json", "package.json");
-      return this.copy("_bower.json", "bower.json");
+      this.template("_package.json", "package.json");
+      return this.template("_bower.json", "bower.json");
     },
     projectfiles: function() {
       this.copy("editorconfig", ".editorconfig");
-      return this.copy("jshintrc", ".jshintrc");
+      this.copy("jshintrc", ".jshintrc");
+      return this.template("_readme.md", "readme.md");
     }
   });
 
