@@ -42,7 +42,7 @@ Generates:
 2. (Windows) Restart
 3. Install [yeoman](http://yeoman.io):
 ```npm install -g yo```
-4. Install *generator-joomla-admin-template* **globally** from npm:
+4. Install *generator-jmpress* **globally** from npm:
 ```npm install -g generator-jmpress```
 5. Run the generator: ```bash $ yo jmpress```
 
